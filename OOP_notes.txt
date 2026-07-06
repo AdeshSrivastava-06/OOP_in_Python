@@ -1,0 +1,163 @@
+The biggest advantage of using OOP is that we can create our own data types. We can modify our data types according to our own will. It gives us the freedom to write. 
+
+-OOP consists of six principles:
+- class
+- object
+- polymorphism
+- encapsulation
+- inheritance
+- abstraction
+
+All the data types that we have studied till today (tuples, set, dictionaries, integer, float, Boolean) are all classes, and when we create a variable of that class, then that is called an object. 
+
+like 
+L = [1,2,3]
+Here is the class list. If we print the type 
+But the L is the object of the class 
+
+CLASS 
+-A class is basically a blueprint. It defines or decides what particular behavior will be shown or what methods can be accessed by the object of that class. 
+-A class typically consists of data or properties and functions or behavior. 
+-It is written in Pascal's case, where every word Of a new word starts with a capital letter 
+
+-If you're making a class car, then the data could be:
+- color
+- diameter
+- length
+This could be the data, and functions will be like calculating a speed, the mileage, and the liters of petrol it needs according to the speed. That will be the function.
+
+
+OBJECT 
+
+Object is an instance of a class. 
+-If the class is car, then its object could be Mahindra, Toyota, Tesla, BMW. 
+
+
+METHODS VS FUNCTIONS 
+
+-A function written inside a class is called a method. 
+-And a function written outside a class, which is independent and is called explicitly, which is called a function, which is not written inside a class. 
+
+For example, if we are making a list and we are printing the length of the list, then `len` is a function, but `l.append`, where `append` is a method. 
+
+===A class diagram represents the data and methods inside a class. here +->pulbic -(minus)=private
+
+
+MAGIC METHODS(dunder methods)
+
+[1]Constructor(__init__)
+
+-A constructor is a special method, which is a magic method. We don't have to call the constructor explicitly. It is automatically invoked whenever there is an object made of the class.
+
+-Why it is beneficial ?
+
+All the configuration-related tasks where we don't want the user's input, we put or write it in the constructor. 
+
+Methods are actually handled by the user. If they want to use the method, they can, and if they don't, then they will not. The constructor is different. It is not handled by the user. It is automatically called and executed whenever an object is made of the class.
+
+We can think of it like this: if we are making a website and our website needed a database connection, I will not ask the users' permission for database connectivity. I will write the database connectivity code itself in my constructor so that whenever an object is created, the database connectivity or internet connectivity happens by default. 
+
+Let's assume this with an example: If God is the programmer, Earth is the class, and we human beings are an object. Then inside the constructor will be such a thing which God does not want, as he wants to control, that is, birth and death. 
+
+We can also make our custom magic methods. 
+
+
+SELF 
+
+So self is nothing but the object only. If we will print the id of self and the id of object to be made, it is the same. 
+
+So it means that if we are making an object and calling a method, then that object itself is being called. 
+
+-Why is it used??
+=In Python, object-oriented programming works by one go-to-the-go. The methods of a class can be accessed only by its objects. Meaning that one method inside a class cannot communicate with other methods inside the same class. Self allows one method in the same class to access or communicate with the method in the same class. 
+
+-Self always points to the current object. If a new object is made, then the self value is updated. 
+
+OBEJCT CREATION WITHOUT REFERENCE 
+
+From the above, we can see that we have created an object without a reference. Whenever we are writing an object name like p1 is equal to person, here scientifically p1 is not the object, but it is a variable that stores the address of the object created by calling that class. so, when we are writing person('Adesh', 'India'), here we are creating an object but we are not storing the address of that object in any variable. so, that object is created but we can not access it because we do not have the reference of that object. so, it is not a good practice to create an object without a reference.
+
+
+REFERNECE VARIABLES 
+
+
+Reference variable holds the object's address.
+
+We can create an object without a reference variable as well, but it is not a good practice. 
+
+An object can have multiple reference variables.
+
+Assigning a new reference variable to an existing object does not create a new object. 
+
+
+    CLASS RELATIONSHIPS 
+
+Aggregation
+-One class owns the other class(Has a relation )  
+-like customer has a address
+-In the state diagram, it is represented by a diamond/Rhombus shape if two classes have aggregation. 
+
+
+Inheritance 
+
+-Suppose in an application there are two roles for students and teachers. Now both students and teachers will require login and registration on the website. Creating different classes for both students and teachers for just login and registration violates the protocol, as we are repeating the code. Inheritance allows us to actually make a parent class, and the child class will automatically inherit the attributes and the methods from its parent class. 
+-In a class diagram of inheritance, the class inheriting has a sign of a triangle in front of it. 
+-DRY - Don't repeat yourself. 
+
+-The things that got inherited are:
+- constructor
+- non-private attributes
+- non-private methods
+
+A child class cannot directly access a parent's private variable.
+
+But a child class can use any parent method (getter, setter, or any other method) that accesses that private variable, because the access is happening inside the parent class's code.
+
+
+Following points to remember:
+- A class can inherit from another class.
+- Inheritance improves code reusability.
+- Constructor attribute methods get inherited.
+- The parent has no access to the child class.
+- Private properties of the parent are not accessible directly in the child class.
+- The child class can override the attributes or methods. This is called method overriding.
+- Super, which is an inbuilt function, is used to invoke the parent class methods and constructors.
+
+
+Types of inheritance:
+
+- Single inheritance
+
+- Multi-level inheritance
+  ~~From grandparents to parents to children, it forms a series of inheritance, and it can grow infinitely in both directions. 
+
+- Hierarchical inheritance
+  ~~when there are multiple child classes of a single parent 
+
+- Multiple inheritance, which is also called the diamond problem
+  ~~a child can have 2 parents but it may cause  theproblem of ambigutiy
+
+- Hybrid inheritance
+  ~combination of 2 or more inheritance type 
+
+
+POLYMORPHISM 
+
+polymorphism is the ability of an object to take on many forms.
+ 
+
+Method overriding == is a feature of OOPs that allows a child class to provide a specific implementation of a method that is already defined in its parent class. The implementation in the child class overrides the implementation in the parent class. This is useful when we want to change the behavior of a method in the child class without changing the code of the parent class.
+
+Method overloading == is a feature of OOPs that allows a class to have more than one method with the same name, but with different parameters. The method to be called is determined by the number and type of arguments passed to the method. This is useful when we want to perform different operations based on the number and type of arguments passed to the method.
+
+Operator overloading == is a feature of OOPs that allows us to define the behavior of operators for user-defined classes. For example, we can define the behavior of the + operator for a class that represents a complex number. This way, we can add two complex numbers using the + operator instead of calling a method to add them.
+
+
+    ABSTRACTION 
+    
+
+Abstraction is the process of hiding the implementation details and showing only the functionality to the user. It is achieved by using abstract classes and abstract methods. An abstract class is a class that cannot be instantiated and is meant to be inherited by other classes. An abstract method is a method that is declared in the abstract class but does not have any implementation. The child class that inherits the abstract class must implement the abstract method.
+
+it basically enforecs the child class to implement the abstract method of the parent class then only the child class can be instantiated.It can be written for securrity reasons or to hide the implementation details from the user. It is also used to achieve polymorphism. In Python, we can use the abc module to create abstract classes and abstract methods.
+
+we cannot make a object of an abstract class
