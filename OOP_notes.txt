@@ -158,6 +158,6 @@ Operator overloading == is a feature of OOPs that allows us to define the behavi
 
 Abstraction is the process of hiding the implementation details and showing only the functionality to the user. It is achieved by using abstract classes and abstract methods. An abstract class is a class that cannot be instantiated and is meant to be inherited by other classes. An abstract method is a method that is declared in the abstract class but does not have any implementation. The child class that inherits the abstract class must implement the abstract method.
 
-it basically enforecs the child class to implement the abstract method of the parent class then only the child class can be instantiated.It can be written for securrity reasons or to hide the implementation details from the user. It is also used to achieve polymorphism. In Python, we can use the abc module to create abstract classes and abstract methods.
+it basically enforecs the child class to implement the abstract method of the parent class then only the child class can be instantiated.It can be written for security reasons or to hide the implementation details from the user. It is also used to achieve polymorphism. In Python, we can use the abc module to create abstract classes and abstract methods.
 
 we cannot make a object of an abstract class
